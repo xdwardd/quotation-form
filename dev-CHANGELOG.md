@@ -1,4 +1,4 @@
-# Wellmade Motors Calibration Frontend Development Changelog
+# Frontend Development Changelog
 All notable development changes to this project will be documented in this file. Dates are displayed in UTC +8.
 
 
