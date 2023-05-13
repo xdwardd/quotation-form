@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calibration Parts with Labor Costing</title>
+    <link rel="stylesheet" href="src/css/style.css" />
+    <link rel="stylesheet" href="dist/output.css" />
+    <script defer src="src/js/script.js"></script>
+  </head>
+  <body>
+    <div class="page-container">
+      <form action="" method="post" class="form-calibration-container flex">
+        <header class="form-header">
+          <h1 class="text-3xl font-bold text-blue-500">
+            Calibration Parts with Labor Costing
+          </h1>
+        </header>
+        <main class="form-body flex">
+          <section class="form-section flex">
+            <div class="input-container flex">
+              <label class="input-label text-gray-500">Company Name</label>
+              <div class="select-container">
+                <select id="company"></select>
+                <span class="select-dropdown icon">&#xe70d;</span>
+              </div>
+            </div>
+          </section>
+          <section class="form-section flex">
+            <h5 class="text-xl font-bold text-gray-500">Customer</h5>
+            <div class="input-container flex">
+              <label for="customer-name" class="input-label"
+                >Name of Customer</label
+              >
+              <input type="text" id="customer-name" required />
+            </div>
+            <div class="input-container flex 0">
+              <label class="input-label">Attention</label>
+              <input class="" type="text" id="attention" required />
+            </div>
+          </section>
+          <section class="form-section flex wrap-input">
+            <h5>CSA</h5>
+            <div class="input-container flex flex-grow">
+              <label class="input-label">Select CSA</label>
+              <div class="select-container">
+                <select id="csa" required></select>
+                <span class="select-dropdown icon">&#xe70d;</span>
+              </div>
+            </div>
+            <div class="input-container flex shrink-date">
+              <label for="csa-date-prepared" class="input-label"
+                >Date Prepared</label
+              >
+              <input type="date" id="csa-date-prepared" class="date" required />
+            </div>
+          </section>
+          <section class="form-section flex wrap-input form-item-desc">
+            <h5>Item Description</h5>
+            <div class="input-container flex">
+              <label class="input-label">C.O.A.R No.</label>
+              <input type="text" id="coar" />
+            </div>
+            <div class="input-container flex">
+              <label for="cyl" class="input-label">No. of Cyl.</label>
+              <input type="text" id="cyl" />
+            </div>
+            <div class="input-container flex">
+              <label for="make-engine" class="input-label"
+                >Make & Engine Model</label
+              >
+              <input type="text" id="make-engine" />
+            </div>
+            <div class="input-container flex">
+              <label for="fax" class="input-label">Fax</label>
+              <input type="text" id="fax" />
+            </div>
+            <div class="input-container flex">
+              <label for="quotation-reference" class="input-label"
+                >Quotation Reference Number</label
+              >
+              <input type="text" id="quotation-reference" />
+            </div>
+            <div class="input-container flex">
+              <label for="pump-serial" class="input-label"
+                >PUMP Serial No.</label
+              >
+              <input type="text" id="pump-serial" />
+            </div>
+          </section>
+          <section class="form-section flex wrap-input">
+            <h5>Prepared by:</h5>
+            <div class="input-container flex flex-grow">
+              <label for="prepared-name" class="input-label">Name</label>
+              <input type="text" id="prepared-name" required />
+            </div>
+            <div class="input-container flex shrink-date">
+              <label for="prepared-date" class="input-label">Date</label>
+              <input type="date" id="prepared-date" class="date" required />
+            </div>
+          </section>
+          <section class="form-section flex">
+            <h5>Terms of Payment</h5>
+            <div class="input-container flex">
+              <label class="input-label">Select Payment</label>
+              <div class="select-container">
+                <select id="termsofpayment"></select>
+                <span class="select-dropdown icon">&#xe70d;</span>
+              </div>
+            </div>
+          </section>
+          <section class="form-section flex gap-0 table-section">
+            <nav class="table-nav">
+              <label for="nav-parts" class="active">
+                <input type="radio" name="table" id="nav-parts" checked />
+                Parts
+                <span class="nav-counter" id="parts-counter">0</span>
+              </label>
+              <label for="nav-labor">
+                <input type="radio" name="table" id="nav-labor" />
+                Labor & Machine Charges
+                <span class="nav-counter" id="labor-counter">0</span>
+              </label>
+            </nav>
+            <div class="table-container block" data-table="parts">
+              <header class="table-header flex">
+                <div class="table-header-title-container">
+                  <h6>Costing Information Supplied by Head Operations</h6>
+                </div>
+                <div class="table-header-btn-container flex">
+                  <button
+                    type="button"
+                    id="parts-delete-btn"
+                    class="table-header-btns table-header-delete-btn hidden"
+                  >
+                    Delete
+                    <span class="select-list-counter">0</span>
+                  </button>
+                  <button
+                    type="button"
+                    id="parts-add-btn"
+                    class="table-header-btns table-header-add-btn flex"
+                  >
+                    Add parts
+                  </button>
+                </div>
+              </header>
+              <section class="table-main">
+                <header class="table-head flex">
+                  <input
+                    type="checkbox"
+                    class="checkbox icon checkbox-column pointer-events-none"
+                  />
+                  <h6 class="name-column">Parts Name</h6>
+                  <h6 class="price-column">Price</h6>
+                  <h6 class="quantity-column">Quantity</h6>
+                  <span class="action-column"></span>
+                </header>
+                <ul class="table-body">
+                  <div class="table-body-empty">No added parts to show.</div>
+                </ul>
+              </section>
+            </div>
+            <div class="table-container hidden" data-table="labor">
+              <header class="table-header flex">
+                <div class="table-header-title-container">
+                  <h6>Labor and Machine Charges</h6>
+                </div>
+                <div class="table-header-btn-container flex">
+                  <button
+                    type="button"
+                    id="labor-delete-btn"
+                    class="table-header-btns table-header-delete-btn hidden"
+                  >
+                    Delete
+                    <span class="select-list-counter">0</span>
+                  </button>
+                  <button
+                    type="button"
+                    id="labor-add-btn"
+                    class="table-header-btns table-header-add-btn flex"
+                  >
+                    Add labor
+                  </button>
+                </div>
+              </header>
+              <section class="table-main">
+                <header class="table-head flex">
+                  <input
+                    type="checkbox"
+                    class="checkbox icon checkbox-column pointer-events-none"
+                  />
+                  <h6 class="name-column">Parts Name</h6>
+                  <h6 class="price-column">Price</h6>
+                  <h6 class="quantity-column">Quantity</h6>
+                  <span class="action-column"></span>
+                </header>
+                <ul class="table-body">
+                  <div class="table-body-empty">
+                    No added labor and machine charges to show.
+                  </div>
+                </ul>
+              </section>
+            </div>
+          </section>
+        </main>
+        <footer class="form-footer">
+          <button class="accent-color">Submit</button>
+        </footer>
+      </form>
+    </div>
+  </body>
+</html>

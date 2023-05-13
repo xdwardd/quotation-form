@@ -1,0 +1,22 @@
+{
+  "name": "calibration-frontend",
+  "version": "1.0.0",
+  "description": "<div align=\"center\">\r   <img src=\"https://lh3.googleusercontent.com/u/0/drive-viewer/AFGJ81o0n2BLOWpCmk2RlJ80eD-yCZChEklZFeAvtjdbM-MhbujPEbIy5z_p63u7YTvGQX7bO0_V-zYdpAWT_lAUGESDOQbNbQ=w1920-h943\" alt=\"Wellmade Logo\" height=\"76\">\r   <h1>Calibration Form Frontend</h1>\r </div>\r <br><br>",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MinecraftJohn/wmdc-calibration-frontend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MinecraftJohn/wmdc-calibration-frontend/issues"
+  },
+  "homepage": "https://github.com/MinecraftJohn/wmdc-calibration-frontend#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.3.2"
+  }
+}
