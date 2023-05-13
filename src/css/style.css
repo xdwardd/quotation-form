@@ -1,0 +1,530 @@
+@font-face {
+    font-family: "Segoe Fluent Icons";
+    src: url(../fonts/Segoe-Fluent-Icons.ttf);
+}
+
+:root {
+    --accent-color: 28, 116, 233;
+    --background-color: #F1F3F9;
+    --text-color: 26, 26, 27;
+    --border-color: #DEE0E7;
+    --success-color: 76, 175, 79;
+    --error-color: 254, 49, 90;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: rgba(var(--text-color), 1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    outline: none;
+}
+
+body {
+    background-color: var(--background-color);
+}
+
+.hidden {
+    display: none;
+}
+
+.block {
+    display: block;
+}
+
+.flex {
+    display: flex;
+}
+
+.accent-color {
+    background-color: rgba(var(--accent-color), 1);
+}
+
+.success-color {
+    background-color: rgba(var(--success-color), 1);
+}
+
+.error-color {
+    background-color: rgba(var(--error-color), 1);
+}
+
+.pointer-events-none {
+    pointer-events: none;
+}
+
+.icon {
+    font-family: "Segoe Fluent Icons";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 16px;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.gap-0 {
+    gap: 0 !important;
+}
+
+.flex-grow {
+    flex-grow: 1;
+}
+
+.select-dropdown {
+    position: absolute;
+    top: 12px;
+    right: 14px;
+    pointer-events: none;
+    flex-shrink: 0;
+}
+
+button {
+    height: 40px;
+    padding: 0 24px;
+    border: none;
+    color: #fff;
+    border-radius: 6px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+button:hover {
+    filter: opacity(0.9);
+}
+
+button:active {
+    filter: opacity(0.8);
+}
+
+h1 {
+    font-size: 32px;
+    font-weight: 600;
+}
+
+h5 {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+h6 {
+    font-weight: 600;
+}
+
+.page-container {
+    width: 100%;
+    min-height: 100vh;
+}
+
+.form-calibration-container {
+    flex-direction: column;
+    gap: 32px;
+    margin: auto;
+    width: 720px;
+    max-width: 95%;
+    padding: 32px 0;
+}
+
+.form-body {
+    flex-direction: column;
+    gap: 42px;
+}
+
+.form-section {
+    width: 100%;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.form-section h5 {
+    min-width: 100%;
+    position: relative;
+    margin: 0 0 9px;
+}
+
+.form-section h5::after {
+    content: "";
+    position: absolute;
+    top: calc(100% + 8px); left: 0;
+    background-color: var(--border-color);
+    width: 100%; height: 1px;
+}
+
+.input-container {
+    flex-direction: column;
+    gap: 8px;
+}
+
+.input-label {
+    font-weight: 600;
+}
+
+.input-container input {
+    height: 40px;
+    padding: 0 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+}
+
+.input-container input:focus {
+    border: 1px solid rgba(var(--accent-color), 1);
+}
+
+.select-container {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+}
+
+select {
+    height: 40px; width: 100%;
+    padding: 0 32px 0 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    appearance: none;
+}
+
+select:focus {
+    border: 1px solid rgba(var(--accent-color), 1);
+}
+
+.wrap-input {
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.form-item-desc .input-container {
+    min-width: calc(50% - 8px);
+}
+
+.table-container {
+    background-color: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+}
+
+.table-header {
+    padding: 16px;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.table-header-title-container {
+    align-items: center;
+    gap: 8px;
+}
+
+.nav-counter {
+    background-color: var(--border-color);
+    font-size: 12px;
+    padding: 0 10px 2px;
+    border-radius: 99px;
+    margin-left: 8px;
+    color: inherit;
+}
+
+.table-header-btn-container {
+    align-items: center;
+    gap: 8px;
+}
+
+.table-header-btns {
+    align-items: center;
+    gap: 8px;
+    background-color: transparent;
+}
+
+.table-header-btns::before {
+    font-family: "Segoe Fluent Icons";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 16px;
+}
+
+.table-header-delete-btn::before {
+    content: "";
+}
+
+.table-header-delete-btn {
+    color: rgba(var(--error-color), 1);
+    border: 1px solid rgba(var(--error-color), 1);
+}
+
+.table-header-delete-btn:hover {
+    background-color: rgba(var(--error-color), 0.06);
+}
+
+.table-header-delete-btn:active {
+    background-color: rgba(var(--error-color), 0.1);
+}
+
+.table-header-add-btn::before {
+    content: "";
+}
+
+.table-header-add-btn {
+    color: rgba(var(--accent-color), 1);
+    border: 1px solid rgba(var(--accent-color), 1);
+}
+
+.table-header-add-btn:hover {
+    background-color: rgba(var(--accent-color), 0.06);
+}
+
+.table-header-add-btn:active {
+    background-color: rgba(var(--accent-color), 0.1);
+}
+
+.table-head {
+    gap: 8px;
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.table-head h6 {
+    color: rgba(var(--text-color), 0.66);
+    font-size: 12px;
+    padding-left: 12px;
+}
+
+.table-body {
+    list-style-type: none;
+}
+
+.table-body-empty {
+    text-align: center;
+    padding: 20px;
+    color: rgba(var(--text-color), 0.66);
+}
+
+.checkbox {
+    flex-shrink: 0;
+    appearance: none;
+    position: relative;
+}
+
+.checkbox::before {
+    content: "";
+    position: absolute;
+    top: 50%; left: 0;
+    transform: translateY(-50%);
+    background-color: #fff;
+    border: 1px solid var(--border-color);
+    width: 20px; height: 20px;
+    border-radius: 4px;
+}
+
+.checkbox:hover::before {
+    background-color: rgba(var(--accent-color), 0.06);
+    border: 1px solid rgba(var(--accent-color), 1);
+}
+
+.checkbox:checked::before {
+    border: 1px solid rgba(var(--accent-color), 1);
+    background-color: rgba(var(--accent-color), 1);
+}
+
+.checkbox:checked::after {
+    content: "" !important;
+    position: absolute;
+    top: 50%; left: 3px;
+    transform: translateY(-50%);
+    color: #fff !important;
+}
+
+.checkbox.indeterminate::after {
+    content: "";
+    position: absolute;
+    top: 50%; left: 3px;
+    transform: translateY(-50%);
+    color: rgba(var(--accent-color), 1);
+}
+
+.checkbox-column {
+    width: 20px;
+}
+
+.name-column {
+    flex-grow: 1;
+    position: relative;
+}
+
+.price-column {
+    width: 132px;
+}
+
+.quantity-column {
+    width: 132px;
+}
+
+.action-column {
+    width: 44px;
+    justify-content: flex-end;
+}
+
+.table-list {
+    gap: 8px;
+    padding: 13px 16px;
+    align-items: center;
+}
+
+.table-list:nth-child(odd) {
+    background-color: rgba(var(--text-color), 0.04);
+}
+
+.table-list:hover {
+    background-color: rgba(var(--accent-color), 0.12);
+}
+
+.input-list {
+    height: 31px;
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    padding: 0 12px;
+}
+
+.name-column select {
+    position: relative;
+    background-color: transparent;
+    border: 1px solid transparent;
+    height: 31px;
+}
+
+.name-column .select-dropdown {
+    top: 7px;
+    right: 10px;
+    opacity: 0;
+}
+
+.table-list:hover .select-dropdown {
+    opacity: 1;
+}
+
+.table-list:hover select {
+    background-color: #fff;
+    border: 1px solid var(--border-color);
+}
+
+.table-list:hover .input-list {
+    background-color: #fff;
+    border: 1px solid var(--border-color);
+}
+
+.table-list:hover .remove-btn {
+    opacity: 1;
+}
+
+.remove-btn {
+    box-sizing: content-box;
+    font-size: 16px;
+    line-height: 16px;
+    padding: 8px 7px 7px 8px;
+    border-radius: 4px;
+    opacity: 0;
+}
+
+.remove-btn:hover {
+    color: #fff;
+    background-color: rgba(var(--error-color), 1);
+}
+
+.table-list.active {
+    background-color: rgba(var(--accent-color), 0.16);
+}
+
+.table-list.active select {
+    background-color: #fff;
+    border: 1px solid var(--border-color);
+}
+
+.table-list.active .select-dropdown {
+    opacity: 1;
+}
+
+.table-list.active .input-list {
+    background-color: #fff;
+    border: 1px solid var(--border-color);
+}
+
+.table-list.active .remove-btn {
+    opacity: 1;
+}
+
+.shrink-date {
+    width: 164px;
+}
+
+.table-section {
+    position: relative;
+}
+
+.table-nav {
+    margin-bottom: -1px;
+}
+
+.table-nav label {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    height: 41px;
+    border-radius: 6px 24px 0 0;
+    padding: 0 16px 1px;
+    color: rgba(var(--text-color), 0.66);
+    cursor: pointer;
+    -webkit-user-select: none;
+    user-select: none;
+    background-color: #fff;
+    border: 1px solid var(--border-color);
+}
+
+.table-nav label:hover {
+    color: rgba(var(--accent-color), 1);
+}
+
+.table-nav label:hover .nav-counter {
+    background-color: rgba(var(--accent-color), 0.16);
+}
+
+.table-nav label.active {
+    color: rgba(var(--accent-color), 1);
+    font-weight: 600;
+    border-bottom: 1px solid #fff;
+}
+
+.table-nav label:first-child::before {
+    content: "";
+    position: absolute;
+    top: calc(100% + 1px); left: 0px;
+    height: 8px; width: 8px;
+    background-color: inherit;
+}
+
+.table-nav label.active::after {
+    content: "";
+    position: absolute;
+    top: 100%; left: 0px;
+    height: 8px; width: 100%;
+    background-color: inherit;
+}
+
+.table-nav label.active .nav-counter {
+    background-color: rgba(var(--accent-color), 1);
+    color: #fff;
+}
+
+.table-nav input {
+    appearance: none;
+}
+
+.select-list-counter {
+    background-color: rgba(var(--error-color), 1);
+    font-size: 12px;
+    padding: 0 10px 2px;
+    border-radius: 99px;
+    color: #fff;
+}
